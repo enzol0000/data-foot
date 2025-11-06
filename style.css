@@ -18,7 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2.5rem;
+  padding: 0.8rem 2.5rem; /* header plus fin */
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   position: sticky;
@@ -32,12 +32,12 @@ header .logo {
 }
 
 header .logo-img {
-  height: 40px;
+  height: 40px; /* taille logo ajustable */
   width: auto;
 }
 
 nav a {
-  color: #1c1c1c;
+  color: #1c1c1c; /* liens noirs par défaut */
   text-decoration: none;
   margin-left: 2rem;
   font-weight: 500;
@@ -45,7 +45,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #007bff;
+  color: #007bff; /* bleu sportif au hover */
 }
 
 /* ---------- NEWS ---------- */
@@ -65,9 +65,10 @@ nav a:hover {
   gap: 2rem;
 }
 
+/* Grande news principale */
 .news-main {
   position: relative;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* ombre plus légère */
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -75,7 +76,7 @@ nav a:hover {
 
 .news-main:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* effet hover comme les autres cartes */
 }
 
 .news-main img {
@@ -92,7 +93,101 @@ nav a:hover {
   margin-bottom: 0.8rem;
 }
 
+/* Deux news secondaires alignées */
 .news-secondary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 
+  gap: 1.5rem;
+}
+
+.news-secondary article {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-secondary article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.news-secondary img {
+  width: 100%;
+  display: block;
+}
+
+.news-secondary h4 {
+  padding: 0.8rem 1rem;
+}
+
+/* ---------- ARTICLES ---------- */
+.articles {
+  padding: 4rem 2rem;
+}
+
+.articles h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.articles-grid article {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.articles-grid article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.articles-grid img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.articles-grid h3 {
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- BOUTONS ---------- */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background-color: #1c1c1c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #007bff; /* bleu sportif */
+  color: #fff;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+  font-size: 0.9rem;
+  color: #555;
+}
