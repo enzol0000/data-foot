@@ -18,7 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2.5rem; /* header plus fin */
+  padding: 0.4rem 2.5rem;
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   position: sticky;
@@ -32,12 +32,12 @@ header .logo {
 }
 
 header .logo-img {
-  height: 40px; /* taille logo ajustable */
+  height: 80px;
   width: auto;
 }
 
 nav a {
-  color: #1c1c1c; /* liens noirs par défaut */
+  color: #1c1c1c;
   text-decoration: none;
   margin-left: 2rem;
   font-weight: 500;
@@ -45,7 +45,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #007bff; /* bleu sportif au hover */
+  color: #007bff;
 }
 
 /* ---------- NEWS ---------- */
@@ -68,7 +68,7 @@ nav a:hover {
 /* Grande news principale */
 .news-main {
   position: relative;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* ombre plus légère */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -76,7 +76,7 @@ nav a:hover {
 
 .news-main:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* effet hover comme les autres cartes */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .news-main img {
@@ -121,6 +121,15 @@ nav a:hover {
 
 .news-secondary h4 {
   padding: 0.8rem 1rem;
+}
+
+/* ---------- SEPARATION ---------- */
+.separator {
+  height: 2px;
+  width: 60%;
+  margin: 2rem auto 1rem auto; /* espace plus serré, surtout en bas */
+  background-color: rgba(0,0,0,0.08);
+  border-radius: 1px;
 }
 
 /* ---------- ARTICLES ---------- */
@@ -178,7 +187,7 @@ nav a:hover {
 }
 
 .btn:hover {
-  background-color: #007bff; /* bleu sportif */
+  background-color: #007bff;
   color: #fff;
 }
 
