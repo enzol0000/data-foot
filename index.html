@@ -3,12 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>data-foot</title>
+  <title>FootData | Média de Data Journalisme Sportif</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bonjour</h1>
-  <p>Test d’affichage avant ajout de l’article et des graphes.</p>
-  <script src="script.js"></script>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <h1>FootData</h1>
+      <p>Le football expliqué par les chiffres</p>
+    </div>
+    <nav>
+      <a href="index.html" class="active">Accueil</a>
+      <a href="#articles">Articles</a>
+      <a href="#news">Actus</a>
+      <a href="#about">À propos</a>
+    </nav>
+  </header>
+
+  <!-- SECTION HERO -->
+  <section class="hero">
+    <h2>Bienvenue sur FootData</h2>
+    <p>Découvrez nos enquêtes sur l’économie du football et l’analyse de ses données.</p>
+  </section>
+
+  <!-- SECTION ARTICLES -->
+  <section id="articles" class="articles">
+    <h2>Nos articles</h2>
+    <div class="articles-grid">
+      <article>
+        <img src="images/foot-tv.jpg" alt="Droits TV et inflation du foot">
+        <h3>Droits TV : le carburant ou le mirage de l’inflation du foot ?</h3>
+        <p>Les droits TV explosent, mais les transferts flambent encore plus vite. D’où vient vraiment l’argent ?</p>
+        <a href="article1.html" class="btn">Lire l’article</a>
+      </article>
+
+      <article>
+        <img src="images/attaquants.jpg" alt="Prix des attaquants">
+        <h3>Pourquoi les attaquants valent-ils de plus en plus cher ?</h3>
+        <p>Le prix des numéros 9 monte en flèche, même quand leurs performances stagnent. Explications en chiffres.</p>
+        <a href="article2.html" class="btn">Lire l’article</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION NEWS -->
+  <section id="news" class="news">
+    <h2>Dernières actualités</h2>
+    <ul>
+      <li>📈 Nouveau rapport Deloitte sur les revenus des clubs européens (2024)</li>
+      <li>💰 Le marché des transferts d’été bat encore un record</li>
+      <li>🌍 L’Arabie Saoudite continue d’investir massivement dans le football</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="about">
+    <p>© 2025 FootData - Projet de Data Journalisme - MMI</p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
