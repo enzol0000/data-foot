@@ -1,126 +1,4 @@
-/* ---------- RESET ---------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
-/* ---------- GLOBAL ---------- */
-body {
-  background-color: #fafafa;
-  color: #1c1c1c;
-  line-height: 1.6;
-}
-
-/* ---------- HEADER ---------- */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 3rem;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-header .logo h1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-header .logo p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-nav a {
-  color: #1c1c1c;
-  text-decoration: none;
-  margin-left: 2rem;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-  color: #ffcb05;
-}
-
-/* ---------- HERO ---------- */
-.hero {
-  position: relative;
-  text-align: center;
-  padding: 6rem 2rem;
-  background: url('images/stade.jpg') center/cover no-repeat;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top:0; left:0; right:0; bottom:0;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.hero .hero-content {
-  position: relative;
-  color: #fff;
-  max-width: 700px;
-  margin: auto;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* ---------- ARTICLES ---------- */
-.articles {
-  padding: 4rem 2rem;
-}
-
-.articles h2 {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 2rem;
-}
-
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.articles-grid article {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-}
-
-.articles-grid article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-}
-
-.articles-grid img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.articles-grid h3 {
-  margin-bottom: 0.8rem;
-}
-
+/* ---------- BOUTONS ---------- */
 .btn {
   display: inline-block;
   margin-top: 1rem;
@@ -134,8 +12,14 @@ nav a.active {
 }
 
 .btn:hover {
-  background-color: #ffcb05;
-  color: #1c1c1c;
+  background-color: #007bff; /* bleu sportif */
+  color: #fff;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
 }
 
 /* ---------- NEWS ---------- */
@@ -145,30 +29,64 @@ nav a.active {
 
 .news h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
-.news ul {
-  list-style: none;
-  max-width: 600px;
-  margin: auto;
+.news-grid {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 2rem;
 }
 
-.news li {
-  margin: 0.8rem 0;
-  padding: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  border-radius: 8px;
-  background-color: #fff;
+/* Grande news principale */
+.news-main {
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* ---------- FOOTER ---------- */
-footer {
-  text-align: center;
+.news-main img {
+  width: 100%;
+  display: block;
+}
+
+.news-main .news-text {
   padding: 1.5rem;
   background-color: #fff;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
-  font-size: 0.9rem;
-  color: #555;
+}
+
+.news-main h3 {
+  margin-bottom: 0.8rem;
+}
+
+/* Deux news secondaires alignées */
+.news-secondary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.news-secondary article {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-secondary article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.news-secondary img {
+  width: 100%;
+  display: block;
+}
+
+.news-secondary h4 {
+  padding: 0.8rem 1rem;
 }
