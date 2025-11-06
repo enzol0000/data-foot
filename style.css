@@ -37,32 +37,15 @@ header .logo p {
 }
 
 nav a {
-  color: #1c1c1c;
+  color: #1c1c1c; /* liens noirs par défaut */
   text-decoration: none;
   margin-left: 2rem;
   font-weight: 500;
   transition: 0.3s;
 }
 
-nav a:hover,
-nav a.active {
-  color: #007bff;
-}
-
-/* ---------- HERO ---------- */
-.hero {
-  text-align: center;
-  padding: 6rem 2rem;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #555;
+nav a:hover {
+  color: #007bff; /* bleu sportif au hover */
 }
 
 /* ---------- NEWS ---------- */
