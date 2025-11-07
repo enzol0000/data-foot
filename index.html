@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DataFoot | Média de Data Journalisme Sportif</title>
+  <title>DataFoot | Sport</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="images/DF.png" alt="DataFoot" class="logo-img">
+      <a href="index.html">
+        <img src="images/DF.png" alt="DataFoot" class="logo-img">
+      </a>
     </div>
     <nav>
       <a href="index.html">Accueil</a>
@@ -21,13 +22,38 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTAINER -->
+  <div class="live-scores">
+    <div class="scores-track">
+      <div class="score-item"><img src="images/psg.png" alt="PSG"> PSG 2 - 1 OM <img src="images/lorenzo.jpg" alt="OM"></div>
+      <div class="score-item"><img src="images/realmadrid.png" alt="Real"> Real Madrid 3 - 0 Barça <img src="images/barça.png" alt="Barça"></div>
+      <div class="score-item"><img src="images/inter.png" alt="Inter"> Inter 1 - 1 Milan <img src="images/milan.png" alt="Milan"></div>
+      <div class="score-item"><img src="images/city.png" alt="Man City"> Man City 2 - 2 Liverpool <img src="images/liverpool.png" alt="Liverpool"></div>
+      <div class="score-item"><img src="images/bayern.png" alt="Bayern"> Bayern 4 - 0 Dortmund <img src="images/dortmund.png" alt="Dortmund"></div>
+      <div class="score-item"><img src="images/arsenal.png" alt="Arsenal"> Arsenal 1 - 0 Chelsea <img src="images/chelsea.png" alt="Chelsea"></div>
+      <div class="score-item"><img src="images/benfica.png" alt="Benfica"> Benfica 2 - 0 Porto <img src="images/porto.webp" alt="Porto"></div>
+      <div class="score-item"><img src="images/juventus.png" alt="Juventus"> Juventus 3 - 3 Napoli <img src="images/napoli.png" alt="Napoli"></div>
+      <div class="score-item"><img src="images/atletico.png" alt="Atletico"> Atletico 0 - 1 Séville <img src="images/seville.png" alt="Séville"></div>
+
+      <div class="score-item"><img src="images/psg.png" alt="PSG"> PSG 2 - 1 OM <img src="images/lorenzo.jpg" alt="OM"></div>
+      <div class="score-item"><img src="images/realmadrid.png" alt="Real"> Real Madrid 3 - 0 Barça <img src="images/barça.png" alt="Barça"></div>
+      <div class="score-item"><img src="images/inter.png" alt="Inter"> Inter 1 - 1 Milan <img src="images/milan.png" alt="Milan"></div>
+      <div class="score-item"><img src="images/city.png" alt="Man City"> Man City 2 - 2 Liverpool <img src="images/liverpool.png" alt="Liverpool"></div>
+      <div class="score-item"><img src="images/bayern.png" alt="Bayern"> Bayern 4 - 0 Dortmund <img src="images/dortmund.png" alt="Dortmund"></div>
+      <div class="score-item"><img src="images/arsenal.png" alt="Arsenal"> Arsenal 1 - 0 Chelsea <img src="images/chelsea.png" alt="Chelsea"></div>
+      <div class="score-item"><img src="images/benfica.png" alt="Benfica"> Benfica 2 - 0 Porto <img src="images/porto.webp" alt="Porto"></div>
+      <div class="score-item"><img src="images/juventus.png" alt="Juventus"> Juventus 3 - 3 Napoli <img src="images/napoli.png" alt="Napoli"></div>
+      <div class="score-item"><img src="images/atletico.png" alt="Atletico"> Atletico 0 - 1 Séville <img src="images/seville.png" alt="Séville"></div>
+    </div>
+  </div>
+
+
+
   <div class="main-container">
 
-    <!-- CONTENU PRINCIPAL -->
+
     <div class="main-content">
 
-      <!-- SECTION À LA UNE -->
+     
       <section id="news" class="news">
         <div class="news-header">
           <h2>À LA UNE</h2>
@@ -35,7 +61,7 @@
         </div>
         <div class="news-grid">
 
-          <!-- Grande news principale -->
+        
           <article class="news-main">
             <a href="article2.html" class="image-link">
               <img src="images/CAclubs.jpg" alt="Actualité principale" class="main-news-img">
@@ -47,7 +73,7 @@
             </div>
           </article>
 
-          <!-- Deux news secondaires alignées -->
+       
           <div class="news-secondary">
             <article>
               <a href="#" class="image-link">
@@ -68,10 +94,9 @@
         </div>
       </section>
 
-      <!-- SEPARATION ÉPURÉE -->
       <div class="separator"></div>
 
-      <!-- SECTION ARTICLES -->
+
       <section id="articles" class="articles">
         <div class="articles-header">
           <h2>NOS ARTICLES</h2>
@@ -100,35 +125,38 @@
 
     </div>
 
-    <!-- COLONNE DIRECT SPORT -->
     <aside class="hot-info">
       <div class="hot-btn">DIRECT SPORT</div>
       <div class="hot-items-wrapper">
         <div class="hot-news">
-          <div class="hot-item">🔥 Messi prêt à rejoindre un club surprise...</div>
-          <div class="hot-item">💰 Transfert record annoncé pour un jeune prodige</div>
-          <div class="hot-item">📈 Le PSG en tête des revenus européens</div>
-          <div class="hot-item">⚽ Ligue 1 : record d’affluence cette saison</div>
-          <div class="hot-item">🌍 Investissements massifs en Arabie Saoudite</div>
-          <div class="hot-item">🏆 Finales européennes : analyses et chiffres clés</div>
-          <div class="hot-item">🔥 Neymar en négociations secrètes...</div>
-          <div class="hot-item">💡 Innovations technologiques dans le football</div>
-          <!-- Duplication pour scroll infini -->
-          <div class="hot-item">🔥 Messi prêt à rejoindre un club surprise...</div>
-          <div class="hot-item">💰 Transfert record annoncé pour un jeune prodige</div>
-          <div class="hot-item">📈 Le PSG en tête des revenus européens</div>
-          <div class="hot-item">⚽ Ligue 1 : record d’affluence cette saison</div>
-          <div class="hot-item">🌍 Investissements massifs en Arabie Saoudite</div>
-          <div class="hot-item">🏆 Finales européennes : analyses et chiffres clés</div>
-          <div class="hot-item">🔥 Neymar en négociations secrètes...</div>
-          <div class="hot-item">💡 Innovations technologiques dans le football</div>
+          <div class="hot-item"><span class="hot-time">08:12</span> Messi prêt à rejoindre un club surprise...</div>
+          <div class="hot-item"><span class="hot-time">09:45</span> Transfert record annoncé pour un jeune prodige</div>
+          <div class="hot-item"><span class="hot-time">10:33</span> Le PSG en tête des revenus européens</div>
+          <div class="hot-item"><span class="hot-time">11:20</span> Ligue 1 : record d’affluence cette saison</div>
+          <div class="hot-item"><span class="hot-time">12:05</span> Investissements massifs en Arabie Saoudite</div>
+          <div class="hot-item"><span class="hot-time">12:55</span> Finales européennes : analyses et chiffres clés</div>
+          <div class="hot-item"><span class="hot-time">13:42</span> Neymar en négociations secrètes...</div>
+          <div class="hot-item"><span class="hot-time">14:18</span> Innovations technologiques dans le football</div>
+          <div class="hot-item"><span class="hot-time">15:03</span> Bayern Munich prépare un transfert surprise</div>
+          <div class="hot-item"><span class="hot-time">15:49</span> Salah pourrait quitter Liverpool cet été</div>
+          <div class="hot-item"><span class="hot-time">16:30</span> Real Madrid dévoile son nouveau maillot</div>
+          <div class="hot-item"><span class="hot-time">17:12</span> Ligue des Champions : tirage au sort ce soir</div>
+          <div class="hot-item"><span class="hot-time">18:05</span> Juventus surveille un jeune talent brésilien</div>
+          <div class="hot-item"><span class="hot-time">18:47</span> Arsenal finalise une signature inattendue</div>
+          <div class="hot-item"><span class="hot-time">19:23</span> PSG pourrait recruter un défenseur central</div>
+          <div class="hot-item"><span class="hot-time">20:10</span> Manchester City annonce un partenariat inédit</div>
+          <div class="hot-item"><span class="hot-time">20:55</span> Ligue 1 : classement et stats mis à jour</div>
+          <div class="hot-item"><span class="hot-time">21:30</span> Neymar et Mbappé en tournée promotionnelle</div>
+          <div class="hot-item"><span class="hot-time">22:05</span> Coupe du Monde 2026 : préparation des équipes</div>
+          <div class="hot-item"><span class="hot-time">22:47</span> Rumeurs : transfert possible de Haaland</div>
+          <div class="hot-item"><span class="hot-time">23:15</span> Analyse : évolution du marché des attaquants</div>
+          <div class="hot-item"><span class="hot-time">23:59</span> Dernières minutes avant la clôture du mercato</div>
         </div>
       </div>
     </aside>
 
   </div>
 
-  <!-- FOOTER -->
   <footer id="about">
     <p>© 2025 DataFoot - Data Journalisme - MMI</p>
   </footer>

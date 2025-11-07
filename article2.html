@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- HEADER IDENTIQUE -->
   <header>
     <div class="logo">
       <img src="images/DF.png" alt="DataFoot" class="logo-img">
@@ -18,11 +17,11 @@
       <a href="index.html">Accueil</a>
       <a href="#news">À la une</a>
       <a href="#articles">Articles</a>
-      <a href="#about">À propos</a>
+      <a href="#about" class="subscribe-btn">S'abonner</a>
     </nav>
   </header>
 
-  <!-- CONTENU ARTICLE -->
+
   <main class="article-page">
     <article class="article-content">
       <img src="images/droittv.jpg" alt="Droits TV" class="article-main-img">
@@ -37,13 +36,13 @@
         <p>Si les droits TV ont propulsé le football dans une nouvelle ère financière, ils n’en sont plus le carburant principal. L’inflation actuelle repose sur un cocktail plus large : course à la visibilité, compétition marketing et capitaux extérieurs. Dans le football moderne, ce ne sont plus les caméras qui font les prix, mais les marques.</p>
       </section>
 
-      <!-- GRAPHIQUE CHART.JS DOUBLE Y -->
+  
       <canvas id="tvInflationChart" style="max-width:900px; margin:2rem auto; display:block; height:400px;"></canvas>
 
     </article>
   </main>
 
-  <!-- FOOTER -->
+
   <footer id="about">
     <p>© 2025 DataFoot - Data Journalisme - MMI</p>
   </footer>
@@ -111,7 +110,6 @@
       }
     });
 
-    // Fonction pour "tracer" point par point
     let currentIndex = 0;
     function drawNextPoint() {
       if(currentIndex < labels.length) {

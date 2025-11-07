@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+ 
   <header>
     <div class="logo">
       <img src="images/DF.png" alt="DataFoot" class="logo-img">
@@ -18,11 +18,11 @@
       <a href="index.html">Accueil</a>
       <a href="#news">À la une</a>
       <a href="#articles">Articles</a>
-      <a href="#about">À propos</a>
+      <a href="#about" class="subscribe-btn">S'abonner</a>
     </nav>
   </header>
 
-  <!-- CONTENU ARTICLE -->
+ 
   <main class="article-page">
     <article class="article-content">
       <img src="images/haaland.jpg" alt="Attaquants" class="article-main-img">
@@ -34,14 +34,13 @@
         Résultat : les attaquants marquent parfois moins, mais pèsent davantage dans la construction et le marketing des clubs. Leur rareté et leur polyvalence les rendent inestimables. Dans un football où chaque passe, appel ou pressing compte autant qu’un but, la valeur d’un attaquant ne se mesure plus seulement au tableau d’affichage.<br><br>
         Au fond, si les attaquants valent toujours de l’or malgré une baisse de leurs statistiques, c’est parce que leur valeur dépasse désormais la simple efficacité devant le but. Entre la pression inflationniste du marché, la rareté des profils complets et l’importance croissante du jeu collectif, le rôle de l’attaquant s’est métamorphosé. Marquer n’est plus tout ; il faut participer, créer, exister dans le système. Dans ce football moderne dominé par la donnée et l’image, le vrai but, pour un club, n’est plus seulement de trouver un buteur… mais un joueur capable de tout faire briller autour de lui.
       </p>
-      
-      <!-- GRAPHIQUE CHART.JS DOUBLE Y -->
+   
       <canvas id="attackingChart" style="max-width:900px; margin:2rem auto; display:block; height:400px;"></canvas>
 
     </article>
   </main>
 
-  <!-- FOOTER -->
+
   <footer id="about">
     <p>© 2025 DataFoot - Data Journalisme - MMI</p>
   </footer>
@@ -92,7 +91,7 @@
       }
     });
 
-    // Animation point par point
+
     let idx1 = 0;
     function drawPoint1() {
       if(idx1 < labels1.length) {
