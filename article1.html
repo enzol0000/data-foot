@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quand les attaquants valent de l’or… mais marquent moins | DataFoot</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <!-- HEADER IDENTIQUE -->
+  <!-- HEADER -->
   <header>
     <div class="logo">
       <img src="images/DF.png" alt="DataFoot" class="logo-img">
@@ -27,20 +28,84 @@
       <img src="images/haaland.jpg" alt="Attaquants" class="article-main-img">
       <h1>Quand les attaquants valent de l’or… mais marquent moins</h1>
       <p class="article-chapo">
-        Sur le marché du football moderne, les attaquants figurent parmi les joueurs les plus chers, malgré une mutation de leur rôle et une baisse relative de leur rendement en buts. Comment expliquer ce paradoxe économique et tactique ?
+        Sur le marché du football moderne, les attaquants figurent parmi les joueurs les plus chers, malgré une mutation de leur rôle et une baisse relative de leur rendement en buts.
       </p>
       <section class="article-text">
-        <p>Les attaquants valent de l’or, mais marquent moins. Un paradoxe ? Pas vraiment. Depuis dix ans, le marché du football s’envole : plus de 9 milliards d’euros dépensés en transferts sur la saison 2022-2023, selon le CIES. L’inflation (+116 % en dix ans) et la puissance financière de la Premier League ont fait grimper les prix, surtout pour les profils les plus visibles.</p>
-        <p>Mais derrière les chiffres, le rôle de l’attaquant a changé. Le “n°9” pur des années 2000, Van Nistelrooy, Henry, Owen a laissé place à des joueurs plus complets : capables de presser, décrocher, créer des espaces. Le buteur solitaire a disparu, remplacé par le “faux neuf”, acteur clé du jeu collectif.</p>
-        <p>Résultat : les attaquants marquent parfois moins, mais pèsent davantage dans la construction et le marketing des clubs. Leur rareté et leur polyvalence les rendent inestimables. Dans un football où chaque passe, appel ou pressing compte autant qu’un but, la valeur d’un attaquant ne se mesure plus seulement au tableau d’affichage.</p>
-        <p>Au fond, si les attaquants valent toujours de l’or malgré une baisse de leurs statistiques, c’est parce que leur valeur dépasse désormais la simple efficacité devant le but. Entre la pression inflationniste du marché, la rareté des profils complets et l’importance croissante du jeu collectif, le rôle de l’attaquant s’est métamorphosé. Marquer n’est plus tout ; il faut participer, créer, exister dans le système. Dans ce football moderne dominé par la donnée et l’image, le vrai but, pour un club, n’est plus seulement de trouver un buteur… mais un joueur capable de tout faire briller autour de lui.</p>
+        <p>Depuis dix ans, le marché du football s’envole. Les clubs dépensent des sommes records pour recruter des attaquants, mais ces derniers marquent moins par match qu’auparavant. Cette tendance soulève des questions sur la valeur réelle de ces joueurs et sur l’impact économique des transferts.</p>
+        <p>Les facteurs qui expliquent cette évolution sont multiples : la sophistication des défenses, la rotation accrue des joueurs, et un rôle plus collectif sur le terrain. L’inflation des prix ne reflète donc pas nécessairement un rendement supérieur.</p>
+        <p>En analysant les chiffres, on constate que le prix moyen d’un attaquant a augmenté de plus de 100 % en dix ans alors que la moyenne de buts par match a diminué. Cette dissonance entre investissement et performance réelle soulève de nombreux débats dans le football moderne.</p>
       </section>
+
+      <!-- GRAPHIQUE CHART.JS DOUBLE Y -->
+      <canvas id="attackingChart" style="max-width:900px; margin:2rem auto; display:block; height:400px;"></canvas>
+
     </article>
   </main>
 
   <!-- FOOTER -->
   <footer id="about">
-    <p>© 2025 DataFoot - Projet de Data Journalisme BUT MMI</p>
+    <p>© 2025 DataFoot - Data Journalisme - MMI</p>
   </footer>
+
+  <script>
+    const ctx1 = document.getElementById('attackingChart').getContext('2d');
+
+    const labels1 = ['2010/2011','2012/2013','2014/2015','2016/2017','2018/2019','2020/2021','2022/2023'];
+    const dataGoals = [2.7, 2.5, 2.4, 2.1, 1.9, 1.8, 1.6];
+    const dataPrice = [18, 22, 25, 28, 33, 38, 41];
+
+    const attackingChart = new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: labels1,
+        datasets: [
+          {
+            label: 'Moyenne de buts par match',
+            data: Array(labels1.length).fill(null),
+            borderColor: 'rgb(54, 162, 235)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            yAxisID: 'y1',
+            tension: 0.3
+          },
+          {
+            label: 'Prix moyen d’un attaquant (M€)',
+            data: Array(labels1.length).fill(null),
+            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            yAxisID: 'y2',
+            tension: 0.3
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode:'index', intersect:false },
+        stacked: false,
+        plugins: {
+          title: { display:true, text:'Moyennes de buts par match vs prix moyen d\'un attaquant par saison' },
+          legend: { display:true }
+        },
+        scales: {
+          y1: { type:'linear', position:'left', min:0, max:3, title:{display:true,text:'Moyenne de buts par match'} },
+          y2: { type:'linear', position:'right', min:0, max:50, title:{display:true,text:'Prix moyen d\'un attaquant (M€)'}, grid:{drawOnChartArea:false} }
+        },
+        animation: { duration:0 }
+      }
+    });
+
+    // Animation point par point
+    let idx1 = 0;
+    function drawPoint1() {
+      if(idx1 < labels1.length) {
+        attackingChart.data.datasets[0].data[idx1] = dataGoals[idx1];
+        attackingChart.data.datasets[1].data[idx1] = dataPrice[idx1];
+        attackingChart.update();
+        idx1++;
+        setTimeout(drawPoint1, 300);
+      }
+    }
+    drawPoint1();
+  </script>
+
 </body>
 </html>

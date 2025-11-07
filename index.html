@@ -17,7 +17,7 @@
       <a href="index.html">Accueil</a>
       <a href="#news">À la une</a>
       <a href="#articles">Articles</a>
-      <a href="#about">À propos</a>
+      <a href="#about" class="subscribe-btn">S'abonner</a>
     </nav>
   </header>
 
@@ -29,12 +29,18 @@
 
       <!-- SECTION À LA UNE -->
       <section id="news" class="news">
-        <h2>À la une</h2>
+        <div class="news-header">
+          <h2>À LA UNE</h2>
+          <a href="#" class="all-link">TOUT VOIR &gt;</a>
+        </div>
         <div class="news-grid">
 
           <!-- Grande news principale -->
           <article class="news-main">
-            <img src="images/CAclubs.jpg" alt="Actualité principale" class="main-news-img">
+            <a href="article2.html" class="image-link">
+              <img src="images/CAclubs.jpg" alt="Actualité principale" class="main-news-img">
+              <span class="hover-text">LIRE</span>
+            </a>
             <div class="news-text">
               <h3>Nouveau rapport Deloitte sur les revenus des clubs européens (2025)</h3>
               <p>Découvrez comment les clubs européens génèrent leurs revenus et l’impact sur le marché des transferts.</p>
@@ -44,11 +50,17 @@
           <!-- Deux news secondaires alignées -->
           <div class="news-secondary">
             <article>
-              <img src="images/yamal.jpg" alt="Actualité secondaire 1">
+              <a href="#" class="image-link">
+                <img src="images/yamal.jpg" alt="Actualité secondaire 1">
+                <span class="hover-text">LIRE</span>
+              </a>
               <h4>Marché des transferts d’été bat un record</h4>
             </article>
             <article>
-              <img src="images/stade2.jpg" alt="Actualité secondaire 2">
+              <a href="#" class="image-link">
+                <img src="images/stade2.jpg" alt="Actualité secondaire 2">
+                <span class="hover-text">LIRE</span>
+              </a>
               <h4>L’Arabie Saoudite continue d’investir massivement</h4>
             </article>
           </div>
@@ -61,32 +73,38 @@
 
       <!-- SECTION ARTICLES -->
       <section id="articles" class="articles">
-        <h2>Nos articles</h2>
+        <div class="articles-header">
+          <h2>NOS ARTICLES</h2>
+          <a href="#" class="all-link">TOUT VOIR &gt;</a>
+        </div>
         <div class="articles-grid">
           <article>
-            <img src="images/droittv.jpg" alt="Droits TV et inflation du foot">
+            <a href="article2.html" class="image-link">
+              <img src="images/droittv.jpg" alt="Droits TV et inflation du foot">
+              <span class="hover-text">LIRE</span>
+            </a>
             <h3>Droits TV : carburant ou mirage de l’inflation ?</h3>
             <p>Les droits TV explosent, mais les transferts flambent encore plus vite. D’où vient vraiment l’argent ?</p>
-            <a href="article2.html" class="btn">Lire l’article</a>
           </article>
 
           <article>
-            <img src="images/haaland.jpg" alt="Prix des attaquants">
+            <a href="article1.html" class="image-link">
+              <img src="images/haaland.jpg" alt="Prix des attaquants">
+              <span class="hover-text">LIRE</span>
+            </a>
             <h3>Quand les attaquants valent de l’or… mais marquent moins</h3>
             <p>Le marché des attaquants a explosé ces dernières années, mais leur rendement devant le but diminue. Analyse.</p>
-            <a href="article1.html" class="btn">Lire l’article</a>
           </article>
         </div>
       </section>
 
     </div>
 
-    <!-- COLONNE INFOS BRÛLANTES -->
+    <!-- COLONNE DIRECT SPORT -->
     <aside class="hot-info">
-      <button class="hot-btn">Infos brûlantes</button>
+      <div class="hot-btn">DIRECT SPORT</div>
       <div class="hot-items-wrapper">
         <div class="hot-news">
-          <!-- Dupliquer pour défilement continu -->
           <div class="hot-item">🔥 Messi prêt à rejoindre un club surprise...</div>
           <div class="hot-item">💰 Transfert record annoncé pour un jeune prodige</div>
           <div class="hot-item">📈 Le PSG en tête des revenus européens</div>
@@ -95,7 +113,7 @@
           <div class="hot-item">🏆 Finales européennes : analyses et chiffres clés</div>
           <div class="hot-item">🔥 Neymar en négociations secrètes...</div>
           <div class="hot-item">💡 Innovations technologiques dans le football</div>
-          <!-- Duplication -->
+          <!-- Duplication pour scroll infini -->
           <div class="hot-item">🔥 Messi prêt à rejoindre un club surprise...</div>
           <div class="hot-item">💰 Transfert record annoncé pour un jeune prodige</div>
           <div class="hot-item">📈 Le PSG en tête des revenus européens</div>
@@ -112,7 +130,7 @@
 
   <!-- FOOTER -->
   <footer id="about">
-    <p>© 2025 DataFoot - Projet de Data Journalisme BUT MMI</p>
+    <p>© 2025 DataFoot - Data Journalisme - MMI</p>
   </footer>
 
 </body>

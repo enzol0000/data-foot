@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Droits TV : carburant ou mirage de l’inflation ? | DataFoot</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -30,17 +31,82 @@
         Les revenus télévisuels du football battent des records historiques, mais les transferts explosent encore plus vite. Les droits TV sont-ils vraiment le moteur de cette inflation, ou les clubs se financent-ils ailleurs ? Une plongée dans les chiffres révèle un marché dopé par l’image et l’argent extérieur.
       </p>
       <section class="article-text">
-        <p>Depuis dix ans, les droits TV ont explosé, notamment en Premier League, où certains contrats ont doublé, voire triplé leur valeur. Pourtant, les chiffres de 2024 révèlent un paradoxe : Chelsea dépense 226 % de ses revenus télévisuels en transferts, tandis que Manchester City, Liverpool ou le PSG dépassent aussi les 100 %. Autrement dit, les droits TV ne suffisent plus à financer la frénésie du mercato.</p>
-        <p>Derrière cette inflation, un nouvel équilibre économique s’impose. Les clubs puisent désormais dans leurs revenus commerciaux : sponsors, partenariats, merchandising et fonds privés. Ces recettes dépassent souvent les revenus télévisuels et permettent d’entretenir une dynamique de transferts toujours plus coûteuse. L’exemple des clubs saoudiens, comme Al-Hilal ou Al-Nassr, est parlant : leurs droits TV restent modestes, mais les dépenses s’envolent grâce à l’argent public et aux marques internationales.</p>
-        <p>À l’inverse, des institutions comme le Bayern Munich ou le Real Madrid maintiennent un modèle plus stable : leurs dépenses sont couvertes par une gestion rigoureuse et des revenus commerciaux puissants. Le contraste est frappant. Chez d’autres, les commissions d’agents et la spéculation sur les joueurs créent une bulle : le prix payé n’est plus lié à la performance sportive, mais à la valeur d’image et au prestige global du club.</p>
-        <p>Si les droits TV ont propulsé le football dans une nouvelle ère financière, ils n’en sont plus le carburant principal. L’inflation actuelle repose sur un cocktail plus large : course à la visibilité, compétition marketing et capitaux extérieurs. Dans le football moderne, ce ne sont plus les caméras qui font les prix, mais les marques.</p>
+        <p>Depuis dix ans, les droits TV ont explosé, notamment en Premier League et en Liga. Ces revenus colossaux alimentent le marché des transferts et permettent aux clubs de recruter des stars mondiales.</p>
+        <p>Malgré cette augmentation, l’inflation du marché des joueurs dépasse celle des droits TV. Le prix des transferts croît plus vite que les revenus télévisuels, posant des questions sur la durabilité de ce système.</p>
+        <p>Les investisseurs étrangers et sponsors contribuent également à cette inflation, rendant le marché de plus en plus complexe et difficile à réguler.</p>
       </section>
+
+      <!-- GRAPHIQUE CHART.JS DOUBLE Y -->
+      <canvas id="tvInflationChart" style="max-width:900px; margin:2rem auto; display:block; height:400px;"></canvas>
+
     </article>
   </main>
 
   <!-- FOOTER -->
   <footer id="about">
-    <p>© 2025 DataFoot - Projet de Data Journalisme BUT MMI</p>
+    <p>© 2025 DataFoot - Data Journalisme - MMI</p>
   </footer>
+
+  <script>
+    const ctx = document.getElementById('tvInflationChart').getContext('2d');
+
+    const labels = ['2010', '2012', '2014', '2016', '2018', '2020', '2022', '2024'];
+    const dataTV = [6.5, 7.2, 8.1, 9.3, 10.8, 12.0, 13.5, 14.8];
+    const dataInflation = [2.3, 3.1, 4.0, 5.2, 6.8, 7.9, 9.2, 10.4];
+
+    const tvInflationChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Droits TV (Mrd€)',
+            data: Array(labels.length).fill(null),
+            borderColor: 'rgb(54, 162, 235)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            yAxisID: 'y1',
+            tension: 0.3
+          },
+          {
+            label: 'Inflation (%)',
+            data: Array(labels.length).fill(null),
+            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            yAxisID: 'y2',
+            tension: 0.3
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        stacked: false,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Évolution des Droits TV mondiaux vs inflation du marché des transferts'
+          }
+        },
+        scales: {
+          y1: { type: 'linear', position:'left', min:0, max:16, title:{display:true,text:'Droits TV (Mrd€)'} },
+          y2: { type: 'linear', position:'right', min:0, max:12, title:{display:true,text:'Inflation (%)'}, grid:{drawOnChartArea:false} }
+        },
+        animation: { duration:0 }
+      }
+    });
+
+    let currentIndex = 0;
+    function drawNextPoint() {
+      if(currentIndex < labels.length) {
+        tvInflationChart.data.datasets[0].data[currentIndex] = dataTV[currentIndex];
+        tvInflationChart.data.datasets[1].data[currentIndex] = dataInflation[currentIndex];
+        tvInflationChart.update();
+        currentIndex++;
+        setTimeout(drawNextPoint, 300);
+      }
+    }
+    drawNextPoint();
+  </script>
+
 </body>
 </html>
