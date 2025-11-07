@@ -424,3 +424,11 @@ footer {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+.league-label {
+  display: block;
+  text-align: right;
+  font-size: 0.65rem;
+  color: rgba(0,0,0,0.4);
+  margin-bottom: 2px;
+}
